@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  microsservice1.api:
+    image: microsservice1api-images
+    container_name: microservice1api-container
+    build:
+      context: .
+      dockerfile: MicrosService1.Api/Dockerfile
+  microsservice2.api:
+    image: microsservice2api-images
+    container_name: microservice2api-container
+    build:
+      context: .
+      dockerfile: MicrosService2.Api/Dockerfile

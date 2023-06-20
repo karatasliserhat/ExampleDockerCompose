@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "tPoidsMc3P/8TwgELkA3rOE5q+8s3mqeoiD5F2axGV4=",
+  "Source": "MicrosService2.Api",
+  "BasePath": "_content/MicrosService2.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

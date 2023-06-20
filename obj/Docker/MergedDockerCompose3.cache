@@ -1,0 +1,27 @@
+name: dockercompose12695588377608557693
+services:
+  microsservice1.api:
+    build:
+      context: C:\Users\glb90090219\Documents\Tfs\serhatkaratasli\IdentityUserProject\ExampleDockerCompose
+      dockerfile: MicrosService1.Api/Dockerfile
+    container_name: microservice1api-container
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: microsservice1api-image
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+  microsservice2.api:
+    build:
+      context: C:\Users\glb90090219\Documents\Tfs\serhatkaratasli\IdentityUserProject\ExampleDockerCompose
+      dockerfile: MicrosService2.Api/Dockerfile
+    container_name: microservice2api-container
+    image: microsservice2api-image
+    networks:
+      default: null
+networks:
+  default:
+    name: dockercompose12695588377608557693_default
