@@ -6,9 +6,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MicrosService1.Api.csproj", "MicrosService1.Api/"]
+COPY ["MicrosService1.Api/MicrosService1.Api.csproj", "MicrosService1.Api/"]
 RUN dotnet restore "MicrosService1.Api/MicrosService1.Api.csproj"
-COPY . ./MicrosService1.Api
+COPY . .
 WORKDIR "/src/MicrosService1.Api"
 RUN dotnet build "MicrosService1.Api.csproj" -c Release -o /app/build
 
@@ -18,5 +18,4 @@ RUN dotnet publish "MicrosService1.Api.csproj" -c Release -o /app/publish /p:Use
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENV ASPNETCORE_ENVIRONMENT="Development"
 ENTRYPOINT ["dotnet", "MicrosService1.Api.dll"]
